@@ -24,7 +24,7 @@ const optimization = () => {
     return config;
 };
 
-const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[hash].${ext}`); //For production adding hash to name
+const filename = (ext) => (isDev ? `[name].${ext}` : `[name].[contenthash].${ext}`); //For production adding hash to name
 
 const cssloader = (extra) => {
     const loaders = [
@@ -73,7 +73,7 @@ module.exports = {
     mode: "development", //Mode for webpack
     entry: {
         main: ["@babel/polyfill", "./index.jsx"], //Entry point for my script, which contains all dependecies within
-        vendor: "./analitycs.ts", //Entry point for all vendor scripts , which contains all dependecies within
+        vendor: "./vendors.js", //Entry point for all vendor scripts , which contains all dependecies within
     },
     output: {
         filename: filename("js"), //[name] is dinamic and it equals to key in entry object (e.g main or vendor) // [contenthash] is dinamic and it will be changed after content will be changed, it is done to prevent caching previous files
@@ -102,9 +102,9 @@ module.exports = {
             },
         }), //creates new html file with compiled js files
         new CleanWebpackPlugin(), //clears dist folder after compiling new file
-        new CopyWebpackPlugin({
-            patterns: [{ from: path.resolve(__dirname, "src/img"), to: path.resolve(__dirname, "dist/img") }],
-        }), //copying static files from > to (e.g src/img to dist/img)
+        // new CopyWebpackPlugin({
+        //     patterns: [{ from: path.resolve(__dirname, "src/img"), to: path.resolve(__dirname, "dist/img") }],
+        // }), //copying static files from > to (e.g src/img to dist/img)
         new MiniCssExtractPlugin({
             filename: filename("css"),
         }),
