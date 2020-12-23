@@ -1,4 +1,4 @@
->npm i-
+>npm i
 >change plugins: new CopyWebpackPlugin, if static files or folder needs to be copied from src to dist folder
 >configure eslintrc file
 >add all imports to vendor.js
