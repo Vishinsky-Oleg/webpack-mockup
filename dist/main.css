@@ -1,0 +1,30 @@
+@font-face {
+    font-family: "Roboto";
+    src: url(03523cf578d69fa923226ff457b92d90.ttf) format("truetype");
+}
+
+body {
+    font-family: Roboto, sans-serif;
+}
+.container {
+    background: black;
+    color: white;
+    max-width: 1000px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.logo {
+    background-image: url(4d4ac489f64c71f8dd53407e03af7cc2.png);
+    background-size: cover;
+    height: 200px;
+    width: 200px;
+    margin: 0 auto;
+}
+
+.box h1 {
+  font-size: 3rem;
+  color: red; }
+
+
+/*# sourceMappingURL=main.css.map*/

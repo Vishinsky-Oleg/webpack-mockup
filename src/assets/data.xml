@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<email>
+    <to>one</to>
+    <from>two</from>
+    <heading>three</heading>
+    <body>four</body>
+</email>
