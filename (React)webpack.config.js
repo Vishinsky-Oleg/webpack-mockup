@@ -35,6 +35,21 @@ const cssloader = (extra) => {
             },
         },
         "css-loader",
+        {
+            loader: "postcss-loader",
+            options: {
+                postcssOptions: {
+                    plugins: [
+                        [
+                            "postcss-preset-env",
+                            {
+                                browsers: ["ie >= 8", "last 4 version"],
+                            },
+                        ],
+                    ],
+                },
+            },
+        },
     ];
 
     if (extra) {
@@ -64,7 +79,7 @@ const jsLoaders = () => {
         },
     ];
     // -------------------Lint is turned off--------------------
-    // if (isDev) { 
+    // if (isDev) {
     //     loader.push("eslint-loader");
     // }
     return loader;
